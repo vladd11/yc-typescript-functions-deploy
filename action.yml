@@ -1,0 +1,23 @@
+name: 'Yandex Cloud Functions deployer'
+author: 'Vladislav Rozhkov <rozhkov.2006@gmail.com>'
+branding:
+  color: 'orange'
+  icon: 'upload'
+description: 'Deploys Typescript Cloud Function to Yandex.Cloud'
+runs:
+  using: 'node16'
+  main: "bundle/main.js"
+
+inputs:
+  function_id:
+    required: true
+    description: 'Yandex Cloud Function ID'
+  oauth_token:
+    required: true
+    description: 'OAuth token from Yandex'
+  external:
+    required: false
+    description: "External libraries you're using. Split with ';'"
+  timeout:
+    required: false
+    description: "Function execution timeout (in seconds). Default: 3"
